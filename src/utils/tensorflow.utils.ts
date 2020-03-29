@@ -24,7 +24,7 @@ export const faceDetection = async (modelPath: string, base64: string, score = 0
   await faceapi.nets.ageGenderNet.loadFromDisk(process.cwd() + modelPath);
 
   const img = await base64ToImage(base64);
-  const results = (await faceapi.detectAllFaces(img, faceDetectionOptions)
+  const results = (await faceapi.detectAllFaces(img, faceDetectionOptions(score))
     .withAgeAndGender()).map(result => <IData>{ gender: result.gender, genderProbability: result.genderProbability, age: result.age });
 
   return results.slice(0, max_to_return);
