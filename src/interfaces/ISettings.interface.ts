@@ -8,5 +8,6 @@ export interface ISetting {
 
 interface IModel {
     path: string;
+    uri: string;
     minScore: number;
 }

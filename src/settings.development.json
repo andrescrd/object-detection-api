@@ -3,11 +3,11 @@
     "port": 3001,
     "cronExpressionSync": "0 0 * * *",
     "mobilenet": {
-        "path": "http://localhost:3001/static/mobilenet/model.json",
+        "uri": "http://localhost:3001/static/mobilenet/model.json",
         "minScore": 0.8
     },
     "faceDetection": {
-        "path": "http://localhost:3001/static/face_detection",
+        "path": "/tf_models/face_detection",
         "minScore": 0.8
     }
 }
