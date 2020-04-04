@@ -33,7 +33,7 @@ app.post("/detect", async (req, res) => {
   }
 
   const faceDetectionSettings = await getFaceDetectionSettings();
-  let faceDetected = await faceDetection(faceDetectionSettings.path, base64, mobilenetSettings.minScore, 1)
+  let faceDetected = await faceDetection(faceDetectionSettings.path, base64, faceDetectionSettings.minScore, 1)
 
   if (faceDetected && faceDetected.length > 0) {
     return res.status(200).send({ status: 'in', data: faceDetected });
